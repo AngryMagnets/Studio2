@@ -6,7 +6,7 @@ public class FallTrigger : MonoBehaviour
     public UnityEvent OnPinFall = new();
     public bool isPinFallen = false;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Ground") && !isPinFallen)
         {

@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void MovePlayer (Vector2 dir) 
     {
-        Debug.Log("Moving " + dir);
+        //Debug.Log("Moving " + dir);
         Vector3 moveDir = new Vector3(dir.x, 0, dir.y);
         playerBody.AddForce(speed * moveDir);
     }
