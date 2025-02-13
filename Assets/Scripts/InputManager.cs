@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    public UnityEvent OnSpacePressed = new UnityEvent();
+    public UnityEvent OnSpacePressed = new UnityEvent()
+                    , OnResetPressed = new UnityEvent();
+
     public UnityEvent<Vector2> OnMove = new UnityEvent<Vector2>();
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) { OnSpacePressed?.Invoke(); }
+        if (Input.GetKeyDown(KeyCode.R)) { OnResetPressed.Invoke();  }
+
 
         Vector2 ballPos = Vector2.zero;
         if (Input.GetKey(KeyCode.A)) { ballPos += Vector2.left; }

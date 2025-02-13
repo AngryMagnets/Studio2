@@ -335,6 +335,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 2059543903}
+  ball: {fileID: 1348926409}
+  pinPrefab: {fileID: 4451384847608334259, guid: c8a55c7f2746c7447aaa084d2fde1b9c, type: 3}
+  pinPosition: {fileID: 1301258910}
+  inputManager: {fileID: 1348926410}
 --- !u!4 &203540745
 Transform:
   m_ObjectHideFlags: 0
@@ -1136,6 +1140,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1301258909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1301258910}
+  m_Layer: 0
+  m_Name: Pin Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1301258910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301258909}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1348926403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,9 +1322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24539c7c5dfd01a43a0452ba95759f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 12.74
+  force: 13
   inputManager: {fileID: 1348926410}
   anchor: {fileID: 24039836}
+  anchorOffset: {x: 0, y: -0.5, z: 1.2}
   launchIndicator: {fileID: 535961529}
 --- !u!114 &1348926410
 MonoBehaviour:
@@ -1304,6 +1340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnSpacePressed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnResetPressed:
     m_PersistentCalls:
       m_Calls: []
   OnMove:
@@ -2001,3 +2040,4 @@ SceneRoots:
   - {fileID: 203540745}
   - {fileID: 1804463057}
   - {fileID: 1646509803}
+  - {fileID: 1301258910}
