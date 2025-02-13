@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         setTriggers();
+        inputManager.OnResetPressed.AddListener(HandleReset);
+        SetPins();
     }
     void IncrementScore ()
     {
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(child.gameObject);
             }
-            Destroy(pinPrefab);
+            Destroy(pinObject);
         }
         pinObject = Instantiate(pinPrefab, pinPosition.position, Quaternion.identity, transform);
 
